@@ -8,7 +8,7 @@
 
 // import LittleJS module
 import * as LJS from './dist/littlejs.esm.js';
-const {vec2, rgb, min} = LJS;
+const {vec2, rgb, min, tile} = LJS;
 
 const levelSize = vec2(38, 20); // size of play area
 
@@ -41,7 +41,7 @@ class Ball extends LJS.EngineObject
     constructor(pos)
     {
         // super(pos); // set object position
-        super(pos, vec2(.5)); // set object position and size
+        super(pos, vec2(.5), tile(0)); // set object position and size
 
         this.velocity = vec2(-.1, -.1); // give ball some movement
         this.setCollision(); // make object collide
